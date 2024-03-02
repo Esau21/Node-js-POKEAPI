@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <title>{{name}}</title>
+  </head>
+
+<style>
+    body{
+        background: #FFE3BB;
+    }
+</style>
+
+  <body>
+
+    <h6 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 123px; background: #FF8F8F; color: #FFFFFF" class="text-center pt-4">
+        API REST DE POKEMON,
+        <b>Edgar dev</b>
+    </h6>
+
+    <div class="container-fluid">
+      <div class="row">
+        {{#each pokemonDetalles}}
+          <div class="col-lg-3 mb-3 pt-4">
+            <div class="card">
+              <div class="card-header" style="background: #5FBDFF;">
+                <p
+                  class="text-center text-white text-uppercase"
+                  style="font-family:Verdana, Geneva, Tahoma, sans-serif"
+                >{{name}}</p>
+              </div>
+              <div class="card-body" style="background: #EEF5FF;">
+                <div
+                  style="display: flex; justify-content:center; align-items:center"
+                >
+                  <img
+                    class="img-fluid"
+                    src="{{sprites.front_default}}"
+                    alt="{{name}}"
+                  />
+                </div>
+              </div>
+              <div class="card-footer" style="background: #EEF5FF;">
+                <p
+                  class="text-center"
+                  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                >Altura: {{height}}</p>
+                <p
+                  class="text-center text-dark"
+                  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                >Peso: {{weight}}</p>
+                <p
+                  class="text-center text-dark"
+                  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                >
+                  Tipo:
+                  {{#each types}}
+                    {{this.type.name}}
+                  {{/each}}
+                </p>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
